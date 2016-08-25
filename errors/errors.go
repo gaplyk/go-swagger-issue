@@ -1,5 +1,7 @@
 package errors
 
+import "net/http"
+
 // swagger:response ErrorResponse
 type ErrorResponse Error
 
@@ -9,7 +11,8 @@ func New(code string) error {
 
 // swagger:model Error
 type Error struct {
-	Code string
+	Code   string
+	Header http.Header
 }
 
 func (e *Error) Error() string {
