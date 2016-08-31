@@ -18,3 +18,16 @@ type Error struct {
 func (e *Error) Error() string {
 	return e.Code
 }
+
+// swagger:response SuccessResponse
+type successResponseBody struct {
+	// In: body
+	Body SuccessResponse
+}
+
+// swagger:model SuccessResponse
+type SuccessResponse map[string]string
+
+type successData struct {
+	SuccessResponse
+}
