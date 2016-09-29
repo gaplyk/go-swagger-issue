@@ -31,3 +31,17 @@ type SuccessResponse map[string]string
 type successData struct {
 	SuccessResponse
 }
+
+type EmbeddedModel struct {
+	Field string `json:"field"`
+
+	Error `json:"-"`
+}
+
+// swagger:model SuccessAllOfResponse
+type SuccessAllOfResponse struct {
+	// swagger:allOf
+	EmbeddedModel
+
+	Error `json:"-"`
+}
